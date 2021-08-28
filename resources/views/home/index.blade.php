@@ -398,18 +398,15 @@
     <!-- Section Best Seller -->
     <div class="sidebar-page-container">
         <div class="auto-container">
+            <div class="sec-title text-center">
+                <div class="divider">
+                    <img src="{{asset('vendor/bellaria')}}/images/icons/divider_1.png" alt="">
+                </div>
+                    <h2>Produk Terlaris</h2>
+                </div>
             <div class="row clearfix">
 
-                <!--Content Side-->
-                <div class="auto-container">
-                    <div class="sec-title text-center">
-                        <div class="divider">
-                            <img src="{{asset('vendor/bellaria')}}/images/icons/divider_1.png" alt="">
-                        </div>
-                        <h2>Produk Terlaris</h2>
-                    </div>
-
-                    
+                <!--Content Side-->                    
                     <div class="our-shop">
                         <div class="row clearfix">
                             @foreach ($bests as $best)
@@ -441,8 +438,6 @@
                             @endforeach
                         </div>
                     </div>
-            
-
                 
             </div>
         </div>

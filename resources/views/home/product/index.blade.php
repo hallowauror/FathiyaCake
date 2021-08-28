@@ -2,7 +2,7 @@
 
 @section('content')
     <!--Sidebar Page Container-->
-    <div class="sidebar-page-container mt-5">
+    <div class="sidebar-page-container">
         <div class="auto-container">
             <div class="row clearfix">
 
