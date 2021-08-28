@@ -55,7 +55,7 @@ Lihat Produk
                       style="width: 85.725px;" aria-label="Plan: activate to sort column ascending">Stock</th>
                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                       style="width: 106.55px;" aria-label="Status: activate to sort column ascending">Gambar</th>
-                    <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 150px;" aria-label="Actions">
+                    <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 160px;" aria-label="Actions">
                       Actions</th>
                   </tr>
                 </thead>

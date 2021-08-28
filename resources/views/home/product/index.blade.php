@@ -55,7 +55,7 @@
                             <div class="sidebar-widget search-widget">
                                 <form method="post" action="contact.html">
                                     <div class="form-group">
-                                        <input type="search" name="search-field" value="" placeholder="Search products…"
+                                        <input type="search" name="search-field" value="" placeholder="Cari Produk…"
                                             required>
                                         <button type="submit"><span class="icon fa fa-search"></span></button>
                                     </div>
@@ -65,7 +65,7 @@
                             <!-- Cart Widget -->
                             <div class="sidebar-widget cart-widget">
                                 <div class="widget-content">
-                                    <h3 class="widget-title">Cart</h3>
+                                    <h3 class="widget-title">Keranjang</h3>
                                     
                                     <div class="shopping-cart">
                                         <ul class="shopping-cart-items">
@@ -93,9 +93,9 @@
                                                 $tax = Cart::tax();
                                                 $total = Cart::total();
                                             @endphp
-                                            <div class="shopping-cart-total"><strong>Subtotal:</strong>Rp. {{$subtotal}}</div>
-                                            <a href="{{ url('/cart') }}" class="theme-btn">View Cart</a>
-                                            <a href="{{url('/checkout')}}" class="theme-btn">Checkout</a>
+                                            <div class="shopping-cart-total"><strong>Subtotal : </strong>Rp. {{$subtotal}}</div>
+                                            <a href="{{ url('/cart') }}" class="theme-btn">Keranjang</a>
+                                            <a href="{{url('/checkout')}}" class="theme-btn">Beli</a>
                                         </div>
                                     </div> <!--end shopping-cart -->
                                 </div>
@@ -108,7 +108,7 @@
             <!-- Related Products -->
             <div class="related-products">
                 <div class="sec-title">
-                    <h4>Related products</h4>
+                    <h4>Produk Terkait</h4>
                 </div>
 
                 <div class="row clearfix">

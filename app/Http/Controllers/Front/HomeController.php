@@ -17,7 +17,16 @@ class HomeController extends Controller
         ->select('categories.category_name', 'products.*')
         ->inRandomOrder()->get();
 
-        return view('home.index', compact('products'));
+        // Best Seller
+        $bests = Product::query()
+            ->join('order_items', 'order_items.product_id', '=', 'products.id')
+            ->selectRaw('products.*, SUM(order_items.quantity) AS quantity_sold')
+            ->groupBy(['products.id'])
+            ->orderByDesc('quantity_sold')
+            ->take(6)
+            ->get();
+
+        return view('home.index', compact('products', 'bests'));
     }
 
     public function product($id) {

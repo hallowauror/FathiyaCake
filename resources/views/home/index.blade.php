@@ -395,14 +395,89 @@
     </section>
     <!--End Main Slider-->
 
-    <!--Sidebar Page Container-->
+    <!-- Section Best Seller -->
     <div class="sidebar-page-container">
         <div class="auto-container">
             <div class="row clearfix">
 
                 <!--Content Side-->
+                <div class="auto-container">
+                    <div class="sec-title text-center">
+                        <div class="divider">
+                            <img src="{{asset('vendor/bellaria')}}/images/icons/divider_1.png" alt="">
+                        </div>
+                        <h2>Produk Terlaris</h2>
+                    </div>
+
+                    
+                    <div class="our-shop">
+                        <div class="row clearfix">
+                            @foreach ($bests as $best)
+                            <!-- Shop Item --> 
+                            <div class="shop-item col-lg-3 col-md-6 col-sm-12">
+                                <div class="inner-box">
+                                    <div class="image-box">
+                                        <figure class="image"><a href="{{ url('/product' . '/' . $best->id) }}"><img src="{{ url('/uploads') . '/' . $best->image }}" alt="" style="width: 269px; height: 165px;"></a></figure>
+                                        <div class="btn-box">
+                                            <form action="{{ route('cart') }}" method="post">
+                                                @csrf
+                                                <input type="hidden" name="id" value="{{ $best->id }}">
+                                                <input type="hidden" name="name" value="{{ $best->name }}">
+                                                <input type="hidden" name="price" value="{{ $best->price }}">
+                                            <button type="submit" class="btn btn-warning btn-best-dark"><i class="fa fa-cart-plus "></i> Tambahkan ke Keranjang </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="lower-content clearfix">
+                                        @php
+                                            $hasil_rupiah = "Rp " . number_format($best->price,2,',','.');
+                                        @endphp
+                                        <h4 class="name"><a href="{{ url('/best' . '/' . $best->id) }}">{{ $best->name }}</a></h4>
+                                        <p>{{ $best->category_name }}</p>
+                                        <div class="price">{{$hasil_rupiah}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+            
+
+                
+            </div>
+        </div>
+    </div>
+    <!-- End Section -->
+
+    <!-- Background -->
+    <div class="features-section">
+        <div class="shape_wrapper shape_one">
+            <div class="shape_inner shape_two" style="background-image: url(vendor/bellaria/images/background/3.jpg);"><div class="overlay"></div></div>
+        </div>
+
+        <div class="auto-container">
+            <div class="btn-box">
+                <a href="#" class="theme-btn btn-style-two large"><span></span>Fathiya Cake<span></span></a>
+            </div>
+        </div>
+    </div>
+    <!-- End Background -->
+
+    <!--Sidebar Page Container-->
+    <div class="sidebar-page-container">
+        <div class="auto-container">
+        <div class="sec-title text-center">
+            <div class="divider">
+                <img src="{{asset('vendor/bellaria')}}/images/icons/divider_1.png" alt="">
+            </div>
+                <h2>Semua Produk</h2>
+            </div>
+            <div class="row clearfix">
+        
+                <!--Content Side-->
                 <div class="content-side col-lg-9 col-md-12 col-sm-12">
                     <div class="our-shop">
+                    
                         <div class="row clearfix">
                             @foreach ($products as $product)
                             <!-- Shop Item --> 
