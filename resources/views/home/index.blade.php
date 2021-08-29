@@ -415,6 +415,11 @@
                                 <div class="inner-box">
                                     <div class="image-box">
                                         <figure class="image"><a href="{{ url('/product' . '/' . $best->id) }}"><img src="{{ url('/uploads') . '/' . $best->image }}" alt="" style="width: 269px; height: 165px;"></a></figure>
+                                        @if($best->status == 'Ready')
+                                        <div class="sale-tag">{{$best->status}}</div>
+                                        @else
+                                        <div class="sale-tag">{{$best->status}}</div>
+                                        @endif
                                         <div class="btn-box">
                                             <form action="{{ route('cart') }}" method="post">
                                                 @csrf
@@ -429,8 +434,8 @@
                                         @php
                                             $hasil_rupiah = "Rp " . number_format($best->price,2,',','.');
                                         @endphp
-                                        <h4 class="name"><a href="{{ url('/best' . '/' . $best->id) }}">{{ $best->name }}</a></h4>
-                                        <p>{{ $best->category_name }}</p>
+                                        <h4 class="name"><a href="{{ url('/product' . '/' . $best->id) }}">{{ $best->name }}</a></h4>
+                                        
                                         <div class="price">{{$hasil_rupiah}}</div>
                                     </div>
                                 </div>
@@ -480,6 +485,11 @@
                                 <div class="inner-box">
                                     <div class="image-box">
                                         <figure class="image"><a href="{{ url('/product' . '/' . $product->id) }}"><img src="{{ url('/uploads') . '/' . $product->image }}" alt="" style="width: 269px; height: 165px;"></a></figure>
+                                        @if($product->status == 'Ready')
+                                        <div class="sale-tag">{{$product->status}}</div>
+                                        @else
+                                        <div class="sale-tag">{{$product->status}}</div>
+                                        @endif
                                         <div class="btn-box">
                                             <form action="{{ route('cart') }}" method="post">
                                                 @csrf

@@ -101,7 +101,17 @@ Ubah Produk
                                                 value="{{ $product->stock }}" name="stock" id="email" />
                                         </div>
                                     </div>
-                                     <div class="col-md-4">
+                                    <div class="col-md-4">
+                                        <div class="mb-1">
+                                            <label class="form-label" for="email">Status</label>
+                                        <select class="form-control" name="status">
+                                            <option value disabled="{{$product->status}}">{{$product->status}}</option>
+                                            <option value="Ready">Ready</option>
+                                            <option value="PO">Pre-Order</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
                                         <div class="mb-1">
                                             <label class="form-label" for="email">Kategori</label>
                                         <select class="form-control" name="category_id">

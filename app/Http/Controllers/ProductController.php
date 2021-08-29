@@ -25,9 +25,11 @@ class ProductController extends Controller
         // Validate the form
         $request->validate([
             'name' => 'required',
+            'category_id' => 'required|exists:categories,id',
             'price' => 'required',
-            'description' => 'required',
             'stock' => 'required',
+            'status' => 'required',
+            'description' => 'required',
             'image' => 'image|required'
         ]);
 
@@ -40,9 +42,11 @@ class ProductController extends Controller
         // Save the data into database
         Product::create([
             'name' => $request->name,
+            'category_id' => $request->category_id,
             'price' => $request->price,
-            'description' => $request->description,
             'stock' => $request->stock,
+            'status' => $request->status,
+            'description' => $request->description,
             'image' => $request->image->getClientOriginalName()
 
         ]);
@@ -74,6 +78,7 @@ class ProductController extends Controller
             'price' => 'required',
             'description' => 'required',
             'stock' => 'required',
+            'status' => 'required',
         ]);
 
         // Check if there is any image
@@ -92,10 +97,11 @@ class ProductController extends Controller
 
         // Updating the product
         $product->update([
-           'name' => $request->name,
+            'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
             'stock' => $request->stock,
+            'status' => $request->status,
             'category_id' => $request->category_id,
             'image' => $product->image
         ]);

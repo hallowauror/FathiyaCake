@@ -23,7 +23,7 @@ class HomeController extends Controller
             ->selectRaw('products.*, SUM(order_items.quantity) AS quantity_sold')
             ->groupBy(['products.id'])
             ->orderByDesc('quantity_sold')
-            ->take(6)
+            ->take(4)
             ->get();
 
         return view('home.index', compact('products', 'bests'));
@@ -40,6 +40,7 @@ class HomeController extends Controller
 
         return view('home.product.index', compact('product', 'products'));
     }
+    
 
     function invoice($id) {
 

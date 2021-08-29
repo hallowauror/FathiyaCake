@@ -16,6 +16,12 @@
     <span class="text-danger">{{ $errors->has('stock') ? $errors->first('stock') : '' }}</span>
 </div>
 
+<div class="form-group {{ $errors->has('status') ? 'has-error' : '' }}">
+    {{ Form::label('status', 'Status') }}
+    {{ Form::text('status',$product->status,['class'=>'form-control border-input','placeholder'=>'10']) }}
+    <span class="text-danger">{{ $errors->has('status') ? $errors->first('status') : '' }}</span>
+</div>
+
 <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
     {{ Form::label('description', 'Deskripsi') }}
     {{ Form::textarea('description',$product->description,['class'=>'form-control border-input','placeholder'=>'Deskripsi']) }}

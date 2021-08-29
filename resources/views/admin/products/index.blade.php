@@ -54,8 +54,10 @@ Lihat Produk
                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                       style="width: 85.725px;" aria-label="Plan: activate to sort column ascending">Stock</th>
                     <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                      style="width: 85.725px;" aria-label="Plan: activate to sort column ascending">Status</th>
+                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                       style="width: 106.55px;" aria-label="Status: activate to sort column ascending">Gambar</th>
-                    <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 160px;" aria-label="Actions">
+                    <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 180px;" aria-label="Actions">
                       Actions</th>
                   </tr>
                 </thead>
@@ -70,6 +72,7 @@ Lihat Produk
                     <td valign="top" class="dataTables_empty">{{ $cat->category_name }}</td>
                     <td valign="top" class="dataTables_empty">{{ $product->price }}</td>
                     <td valign="top" class="dataTables_empty">{{ $product->stock }}</td>
+                    <td valign="top" class="dataTables_empty">{{ $product->status }}</td>
                     <td valign="top" class="dataTables_empty">
                       <img src="{{ url('uploads').'/'. $product->image }}" style="width:50px;">
                     </td>
@@ -98,7 +101,7 @@ Lihat Produk
             <div class="modal-dialog">
               <form action="{{url('admin/products')}}" method="post" class="add-new-user modal-content pt-0"
                 novalidate="novalidate" enctype="multipart/form-data">
-                {{ csrf_field() }}
+                @csrf
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">×</button>
                 <div class="modal-header mb-1">
                   <h5 class="modal-title" id="exampleModalLabel">Tambah Produk</h5>
@@ -120,13 +123,21 @@ Lihat Produk
                   </div>
                   <div class="mb-1">
                     <label class="form-label" for="basic-icon-default-fullname">Harga Produk</label>
-                    <input type="text" class="form-control dt-full-name" id="basic-icon-default-fullname" name="price"
+                    <input type="number" class="form-control dt-full-name" id="basic-icon-default-fullname" name="price"
                       aria-label="John Doe" aria-describedby="basic-icon-default-fullname2">
                   </div>
                   <div class="mb-1">
                     <label class="form-label" for="basic-icon-default-fullname">Stock Produk</label>
-                    <input type="text" class="form-control dt-full-name" id="basic-icon-default-fullname" name="stock"
+                    <input type="number" class="form-control dt-full-name" id="basic-icon-default-fullname" name="stock"
                       aria-label="John Doe" aria-describedby="basic-icon-default-fullname2">
+                  </div>
+                  <div class="mb-1">
+                    <label class="form-label" for="basic-icon-default-fullname">Status Produk</label>
+                    <select name="status" class="form-control">
+                      <option selected disabled>Pilih Status</option>
+                      <option value="Ready">Ready</option>
+                      <option value="PO">Pre-Order</option>
+                    </select>
                   </div>
                   <div class="mb-1">
                     <label class="form-label" for="basic-icon-default-fullname">Deskripsi Produk</label>
