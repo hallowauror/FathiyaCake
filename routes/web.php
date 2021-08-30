@@ -109,3 +109,7 @@ Route::get('empty', function() {
 // Forgot Password
 Route::get('/forgot-password', 'Front\ForgotPasswordController@index');
 Route::post('/forgot-password', 'Front\ForgotPasswordController@forgot');
+
+// Update Profile
+Route::get('/user/profile/update', 'Front\UserProfileController@editProfile');
+Route::post('/user/profile/update', 'Front\UserProfileController@updateProfile');

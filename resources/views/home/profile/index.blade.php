@@ -92,6 +92,28 @@
             </div>
 
             <div class="col-lg-6 col-md-12 col-sm-12 margin-bottom-50">
+                @if ( $errors->any() )
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+
+            @endif
+
+                @if (session('success'))
+                    <div class="alert alert-success alert-dismissible">
+                        {!! session('success') !!}
+                    </div>
+                @endif
+
+                @if (session('error'))
+                    <div class="alert alert-error alert-dismissible">
+                        {!! session('error') !!}
+                    </div>
+                @endif
                 <!--Accordian Box-->
                 <ul class="accordion-box">
                     <!--Block-->
@@ -118,9 +140,9 @@
                         </div>
                     </li>
                 </ul>
-
-
-                <a href="/user/logout" class="theme-btn float-right mt-4">Logout</a>
+                
+                <a href="/user/logout" class="theme-btn float-right mt-4 ml-4">Logout</a>
+                <a href="/user/profile/update" class="theme-btn float-right mt-4 mr-4">Perbarui Data Pengguna</a>
             </div>
         </div>
 

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Order;
 use App\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Hash;
 
 class UserProfileController extends Controller
 {
@@ -62,5 +62,33 @@ class UserProfileController extends Controller
 
         $request->session()->flash('msg', 'Wait for your payment to verified by Admin');
         return redirect()->back();
+    }
+
+    public function editProfile() {
+        $id = auth()->user()->id;
+        $user = User::where('id', $id)->first();
+        return view('home.profile.edit', compact('user'));
+    }
+
+    // For update Profile
+    public function updateProfile(Request $request) {
+        // dd($request->all());
+        
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email|exists:users,email',
+            'password' => 'nullable|min:6',
+            'confirm_password' => 'nullable|same:password'
+        ]);
+        
+        $user = auth()->user();
+
+        $password = !empty($request->password) ? bcrypt($request->password):$user->password;
+        $user->update([
+            'name' => $request->name,
+            'password' => $password
+        ]);
+
+        return redirect('/user/profile')->with(['success' => 'Data berhasil diperbarui!']);
     }
 }
