@@ -34,13 +34,15 @@
                     </div>
                     
                     <div class="form-group">
-                        <label>Password</label>
+                        <label>Password Baru</label>
                         <input type="password" name="password" placeholder="">
+                        <p style="color: red; font-size: 13px">Kosongkan jika tidak ingin mengganti password.</p>
                     </div>
 
                     <div class="form-group">
-                        <label>Konfirmasi Password</label>
+                        <label>Konfirmasi Password Baru</label>
                         <input type="password" name="confirm_password" placeholder="">
+                        <p style="color: red; font-size: 13px">Kosongkan jika tidak ingin mengganti password.</p>
                     </div>
 
                     <button class="theme-btn" type="submit">Perbarui</button>
