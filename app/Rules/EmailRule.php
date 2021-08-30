@@ -29,6 +29,7 @@ class EmailRule implements Rule
         return Str::endsWith($value, [
             'gmail.com',
             'yahoo.com',
+            'yahoo.co.id',
             'outlook.com'
         ]);
     }
