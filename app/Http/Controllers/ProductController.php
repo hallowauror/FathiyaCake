@@ -22,6 +22,8 @@ class ProductController extends Controller
 
     public function store(Request $request) {
         
+        // dd($request->all());
+        
         // Validate the form
         $request->validate([
             'name' => 'required',

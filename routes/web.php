@@ -105,3 +105,7 @@ Route::post('/checkout','Front\CheckoutController@store')->name('checkout');
 Route::get('empty', function() {
     Cart::instance('default')->destroy();
 });
+
+// Forgot Password
+Route::get('/forgot-password', 'Front\ForgotPasswordController@index');
+Route::post('/forgot-password', 'Front\ForgotPasswordController@forgot');
