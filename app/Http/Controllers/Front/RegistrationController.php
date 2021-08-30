@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Rules\EmailRule;
 
 class RegistrationController extends Controller
 {
@@ -18,9 +19,10 @@ class RegistrationController extends Controller
         // Validate the user
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => ['required', 'email', new EmailRule],
             'password' => 'required',
-            'password_confirmation' => 'required|same:password',            
+            'password_confirmation' => 'required|same:password',       
+            new EmailRule()     
         ]);
 
         // Save the data
