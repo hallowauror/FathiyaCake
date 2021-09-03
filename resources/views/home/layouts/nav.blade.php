@@ -43,7 +43,7 @@
                                         <img src="{{ url('/uploads') . '/'. $item->model->image }}" alt="#" class="thumb" />
                                         <span class="item-name">{{ $item->model->name }}</span>
                                         @php
-                                            $total = "Rp " . $item->total();
+                                            $total = "Rp " . $item->subtotal();
                                         @endphp
                                         <span class="item-quantity">{{ $item->qty }} x <span class="item-amount">{{$total}}</span></span>
                                         <a href="shop-single.html" class="product-detail"></a>
@@ -57,7 +57,7 @@
                                     @endforeach
                                 </ul>
 
-                                <div class="cart-footer">
+                                <div class="cart-footer mt-5">
                                     @php     
                                         $subtotal = Cart::subtotal();
                                         $tax = Cart::tax();

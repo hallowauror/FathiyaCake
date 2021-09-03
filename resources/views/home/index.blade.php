@@ -532,7 +532,7 @@
                                                 <img src="{{ url('/uploads') . '/'. $item->model->image }}" alt="#" class="thumb" />
                                                 <span class="item-name">{{ $item->model->name }}</span>
                                                 @php
-                                                    $total = "Rp " . $item->total();
+                                                    $total = "Rp " . $item->subtotal();
                                                 @endphp
                                                 <span class="item-quantity">{{ $item->qty }} x <span class="item-amount">{{$total}}</span></span>
                                                 <a href="shop-single.html" class="product-detail"></a>
