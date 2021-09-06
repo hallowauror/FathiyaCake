@@ -38,7 +38,7 @@
                         <tbody>
                             @foreach (Cart::instance('default')->content() as $item )
                             @php
-                                    $total = "Rp " . $item->total();
+                                    $total = "Rp " . $item->subtotal();
                                     $price = "Rp " . number_format($item->model->price,2,',','.');;
                                 @endphp
                             <tr class="cart-item">
@@ -75,8 +75,8 @@
                         @endphp
                         <li><h3>Total Keranjang</h3></li>
                         <li class="clearfix"><span class="col">Subtotal</span><span class="col price">Rp. {{$subtotal}}</span></li>
-                        <li class="clearfix"><span class="col">Total</span><span class="col total-price">Rp. {{$total}}</span></li><br>
-                        <li class="text-right"><a href="{{'/checkout'}}" class="theme-btn proceed-btn">Beli</a></li>
+                        <li class="clearfix"><span class="col">Total</span><span class="col total-price">Rp. {{$subtotal}}</span></li><br>
+                        <li class="text-right"><a href="{{'/checkout'}}" class="theme-btn proceed-btn">Proses Pesanan</a></li>
                     </ul>
                 </div>  
             </div>

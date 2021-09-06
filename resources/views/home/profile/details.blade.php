@@ -159,13 +159,16 @@
                             <tr class="cart-item">
                                 <td class="product-thumbnail">Detail barang</td>
                                 <td class="product-name">
+                                    @php
+                                        $total = 0;
+                                    @endphp
                                     @foreach ($order->products as $product)
                                     {{ $product->name }} | Rp{{ number_format($product->price, 0, ',', '.') }} <br>
                                     @endforeach
                                     @foreach ($order->orderItems as $item)
                                     {{ $item->quantity }} item | Rp{{ number_format($item->price*$item->quantity, 0, ',', '.') }} <br>
                                     @php
-                                        $total = $item->price*$item->quantity;
+                                        $total += $item->price*$item->quantity;
                                     @endphp
                                     @endforeach
                                     Total : Rp{{ number_format($total, 0, ',', '.') }} <br> <br>

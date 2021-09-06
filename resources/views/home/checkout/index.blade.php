@@ -101,12 +101,15 @@
                     </thead>
                     <tbody>
                     @foreach (Cart::instance('default')->content() as $item )
+                        @php
+                            $ongkir = number_format(12000,2,',','.')
+                        @endphp
                         <tr class="cart-item">
                             <td class="product-name">{{$item->model->name}}&nbsp;
                                 <strong class="product-quantity">× {{$item->qty}}</strong>
                             </td> 
                             <td class="product-total">
-                            <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">Rp. </span>{{ $item->total() }}</span>
+                            <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">Rp. </span>{{ $item->subtotal() }}</span>
                             </td>
                         </tr>
                     @endforeach
@@ -118,11 +121,11 @@
                         </tr>
                         <tr class="cart-subtotal">
                             <th>Ongkos Kirim</th>
-                            <td><span class="amount">Rp. 10,000.00</span></td>
+                            <td><span class="amount">Rp. {{$ongkir}}</span></td>
                         </tr>
                         <tr class="order-total">
                             <th>Total</th>
-                            <td><strong class="amount">Rp. {{ Cart::total() }}</strong> </td>
+                            <td><strong class="amount">Rp. {{ Cart::subtotal() }}</strong> </td>
                         </tr>
                     </tfoot>
                 </table>
@@ -164,7 +167,7 @@
                             <li>
                                 <div class="radio-option">
                                     <input type="radio" name="payment_method" value="cod" id="payment-3">
-                                    <label for="payment-3"><strong>Bayar di Tempat</strong><span class="small-text">Silahkan siapkan uang pas sebesar Rp.{{ Cart::total() }} kepada kurir Fathya Cake.</span></label>
+                                    <label for="payment-3"><strong>Bayar di Tempat</strong><span class="small-text">Silahkan siapkan uang pas sebesar Rp.{{ Cart::subtotal() }} kepada kurir Fathya Cake.</span></label>
                                 </div>
                             </li>
                         </ul>

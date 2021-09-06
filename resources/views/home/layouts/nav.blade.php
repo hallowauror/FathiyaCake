@@ -37,13 +37,13 @@
                             <a href=#><i class="icon flaticon-commerce"></i> <span class="count">{{ Cart::instance('default')->count() }}</span></a>
                             @endif
                             <div class="shopping-cart">
-                                <ul class="shopping-cart-items">
+                                <ul class="shopping-cart-items mb-5">
                                     @foreach (Cart::instance('default')->content() as $item )
                                     <li class="cart-item">
                                         <img src="{{ url('/uploads') . '/'. $item->model->image }}" alt="#" class="thumb" />
                                         <span class="item-name">{{ $item->model->name }}</span>
                                         @php
-                                            $total = "Rp " . $item->total();
+                                            $total = "Rp " . $item->subtotal();
                                         @endphp
                                         <span class="item-quantity">{{ $item->qty }} x <span class="item-amount">{{$total}}</span></span>
                                         <a href="shop-single.html" class="product-detail"></a>
@@ -60,7 +60,7 @@
                                 <div class="cart-footer">
                                     @php     
                                         $subtotal = Cart::subtotal();
-                                        $tax = Cart::tax();
+                                        // $tax = Cart::tax();
                                         $total = Cart::total();
                                     @endphp
                                     <div class="shopping-cart-total"><strong>Subtotal : </strong>Rp. {{$subtotal}}</div>
