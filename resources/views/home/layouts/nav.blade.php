@@ -57,7 +57,7 @@
                                     @endforeach
                                 </ul>
 
-                                <div class="cart-footer">
+                                <div class="cart-footer mt-5">
                                     @php     
                                         $subtotal = Cart::subtotal();
                                         // $tax = Cart::tax();

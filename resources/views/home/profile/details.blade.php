@@ -161,6 +161,11 @@
                                 <td class="product-name">
                                     @php
                                         $total = 0;
+                                        if($order->send_by == 'courir')
+                                            $ongkir = 10000;
+                                        else
+                                            $ongkir = 0;
+                                        $totalbayar = 0;
                                     @endphp
                                     @foreach ($order->products as $product)
                                     {{ $product->name }} | Rp{{ number_format($product->price, 0, ',', '.') }} <br>
@@ -169,9 +174,11 @@
                                     {{ $item->quantity }} item | Rp{{ number_format($item->price*$item->quantity, 0, ',', '.') }} <br>
                                     @php
                                         $total += $item->price*$item->quantity;
+                                        $totalbayar = $total + $ongkir;
                                     @endphp
                                     @endforeach
-                                    Total : Rp{{ number_format($total, 0, ',', '.') }} <br> <br>
+                                    Ongkir : Rp{{ number_format($ongkir, 0, ',', '.') }} <br/>
+                                    Total : Rp{{ number_format($totalbayar, 0, ',', '.') }} <br> <br>
 
                                     @if ($order->information != null)
                                         *Notes : {{ $order->information }}                                        
