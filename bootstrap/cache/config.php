@@ -4,11 +4,11 @@
     'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://localhost',
+    'url' => 'http://localhost:8000',
     'timezone' => 'Asia/Jakarta',
     'locale' => 'en',
     'fallback_locale' => 'en',
-    'key' => 'base64:QSSJTyVKdY9QMEiHfki7KyAVigtvgqhkSwqkJL0Wxm0=',
+    'key' => 'base64:/b3+Mmg+Y79tyBJbY98PZDSb87cenJVCU015iRI2O/c=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -181,7 +181,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\Ega\\FathiyaCake\\storage\\framework/cache/data',
+        'path' => 'D:\\Belajar\\elya-cake2\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -286,13 +286,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Ega\\FathiyaCake\\storage\\app',
+        'root' => 'D:\\Belajar\\elya-cake2\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Ega\\FathiyaCake\\storage\\app/public',
-        'url' => 'http://localhost/storage',
+        'root' => 'D:\\Belajar\\elya-cake2\\storage\\app/public',
+        'url' => 'http://localhost:8000/storage',
         'visibility' => 'public',
       ),
       's3' => 
@@ -335,13 +335,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\Ega\\FathiyaCake\\storage\\logs/laravel.log',
+        'path' => 'D:\\Belajar\\elya-cake2\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\Ega\\FathiyaCake\\storage\\logs/laravel.log',
+        'path' => 'D:\\Belajar\\elya-cake2\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 7,
       ),
@@ -377,23 +377,23 @@
   'mail' => 
   array (
     'driver' => 'smtp',
-    'host' => 'smtp.mailtrap.io',
-    'port' => '2525',
+    'host' => 'smtp.googlemail.com',
+    'port' => '465',
     'from' => 
     array (
       'address' => 'hello@example.com',
-      'name' => 'Example',
+      'name' => 'FathiyaCake',
     ),
-    'encryption' => NULL,
-    'username' => NULL,
-    'password' => NULL,
+    'encryption' => 'ssl',
+    'username' => 'Fathiyascake@gmail.com',
+    'password' => 'Enscorp416',
     'sendmail' => '/usr/sbin/sendmail -bs',
     'markdown' => 
     array (
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\Ega\\FathiyaCake\\resources\\views/vendor/mail',
+        0 => 'D:\\Belajar\\elya-cake2\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -471,7 +471,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\Ega\\FathiyaCake\\storage\\framework/sessions',
+    'files' => 'D:\\Belajar\\elya-cake2\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -491,9 +491,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\Ega\\FathiyaCake\\resources\\views',
+      0 => 'D:\\Belajar\\elya-cake2\\resources\\views',
     ),
-    'compiled' => 'C:\\Ega\\FathiyaCake\\storage\\framework\\views',
+    'compiled' => 'D:\\Belajar\\elya-cake2\\storage\\framework\\views',
   ),
   'cart' => 
   array (
