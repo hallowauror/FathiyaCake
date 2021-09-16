@@ -18,7 +18,7 @@
                         <p>Berikut Cara Melakukan Order</p>
                         <ul class="list-style-one">
                             <p>
-                                1) Buka website Fathiya Cake and Cookies (http://fathiyacake.code-breeder.com)<br>
+                                1) Buka website Fathiya Cake and Cookies (http://fathiya-cake.patunganbersama.com)<br>
 
                                 2) Pilih menu Shop dan klik My Account
                                 Jika sudah memiliki akun, cukup menuliskan email dan password lalu klik LOGIN .

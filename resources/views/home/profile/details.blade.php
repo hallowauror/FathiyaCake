@@ -43,7 +43,9 @@
                             <td class="product-price">
                                 @if ($order->status == 'Confirmed')
                                 <span class="badge badge-info">Confirmed</span>
-                                <p class="p-15">*Silahkan unggah bukti pembayaran.</p>
+                                    @if ($order->payment_method == 'transfer')
+                                    <p class="p-15">*Silahkan unggah bukti pembayaran.</p>
+                                    @endif
                                 @elseif ($order->status == 'Pending')
                                 <span class="badge badge-warning">Pending</span>
                                 @if ($order->due_date != null && $order->status == 'Pending')
@@ -84,8 +86,8 @@
                                             <p>Pilih pengiriman</p>
                                             <div class="form-group">
                                                 <select name="taken_by" class="form-control">
-                                                    <option value="courir">Kurir</option>
-                                                    <option value="by_self">Ambil Sendiri</option>
+                                                    <option value="courir">Kurir Fathiya Cake</option>
+                                                    {{-- <option value="by_self">Ambil Sendiri</option> --}}
                                                 </select>
                                             </div>                                                                            
                                         <button type="submit" class="theme-btn">Kirim</button>
@@ -101,11 +103,10 @@
                                     <div class="form-group">
                                         <input type="file" name="payment" class="form-control">
                                     </div>                                    
-                                        <p>Pilih pengiriman</p>
+                                        <p>Pengiriman</p>
                                         <div class="form-group">
                                             <select name="taken_by" class="form-control">
-                                                <option value="courir">Kurir</option>
-                                                <option value="by_self">Ambil Sendiri</option>
+                                                <option value="courir">Kurir Fathiya Cake</option>
                                             </select>
                                         </div>                                                                            
                                     <button type="submit" class="theme-btn">Upload</button>
@@ -161,10 +162,7 @@
                                 <td class="product-name">
                                     @php
                                         $total = 0;
-                                        if($order->send_by == 'courir')
-                                            $ongkir = 10000;
-                                        else
-                                            $ongkir = 0;
+                                        $ongkir = 10000;
                                         $totalbayar = 0;
                                     @endphp
                                     @foreach ($order->products as $product)

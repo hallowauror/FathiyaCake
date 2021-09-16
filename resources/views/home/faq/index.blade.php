@@ -27,6 +27,26 @@ Instagram : @fathiyacakeandcookies</div>
                     </div>
                 </div>
             </li>
+
+             <!--Block-->
+             <li class="accordion block">
+                <div class="acc-btn"><div class="icon-outer"><span class="icon fa fa-plus"></span> </div> Apakah Fathiya Cake and Cookies memiliki cabang di kota lain?</div>
+                <div class="acc-content">
+                    <div class="content">
+                        <div class="text">Untuk saat ini Fathiya Cake and Cookies hanya tersedia di Kota Cilegon</div>
+                    </div>
+                </div>
+            </li>
+
+            <!--Block-->
+            <li class="accordion block">
+                <div class="acc-btn"><div class="icon-outer"><span class="icon fa fa-plus"></span> </div> Apakah Fathiya Cake and Cookies dapat melakukan pengiriman diluar wilayah Cilegon?</div>
+                <div class="acc-content">
+                    <div class="content">
+                        <div class="text">Untuk saat ini pengiriman hanya dapat dilakukan untuk wilayah Cilegon.</div>
+                    </div>
+                </div>
+            </li>
             
             <!--Block-->
             <li class="accordion block">
@@ -53,15 +73,6 @@ Instagram : @fathiyacakeandcookies</div>
                 <div class="acc-content">
                     <div class="content">
                         <div class="text">Silahkan hubungi kami di Whatsapp 081211654729</div>
-                    </div>
-                </div>
-            </li>
-            <!--Block-->
-            <li class="accordion block">
-                <div class="acc-btn"><div class="icon-outer"><span class="icon fa fa-plus"></span> </div> Apakah Fathiya Cake and Cookies memiliki cabang di kota lain?</div>
-                <div class="acc-content">
-                    <div class="content">
-                        <div class="text">Untuk saat ini Fathiya Cake and Cookies hanya tersedia di Kota Cilegon</div>
                     </div>
                 </div>
             </li>
