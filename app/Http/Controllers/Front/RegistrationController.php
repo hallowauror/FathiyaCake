@@ -33,10 +33,10 @@ class RegistrationController extends Controller
         ]);
 
         // Sign the user in
-        auth()->login($user);
+        // auth()->login($user);
 
         // Redirect to
-        return redirect('/user/profile');
+        return redirect('/user/login')->with('success', 'Registrasi berhasil, silahkan melakukan login!');
 
     }
 
